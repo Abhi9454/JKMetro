@@ -21,7 +21,7 @@
         <!-- Sidebar Menu -->
 
         @if(strcmp(Session::get("value"),"admin")==0)
-        <div class="user-panel mt-3 text-center pb-3 mb-3 d-flex">
+        <div class="user-panel mt-3 ml-3 pb-3 mb-3 d-flex">
             <div class="info">
                 <a href="#" class="d-block">{{Session::get("email")}}</a>
             </div>
@@ -36,6 +36,30 @@
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 Dashboard
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('HOME.USERDASHBOARD')}}" class="nav-link">
+                            <i class="nav-icon fas fa-edit"></i>
+                            <p>
+                                Add Article
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('HOME.USERDASHBOARD')}}" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                View Article
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('HOME.USERDASHBOARD')}}" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                All Users
                             </p>
                         </a>
                     </li>
