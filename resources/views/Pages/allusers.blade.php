@@ -66,7 +66,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Registered User's List</h3>
+                                <h3 class="card-title">User's List</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -74,17 +74,17 @@
                                         <thead>
                                         <tr>
                                             <th>S.No.</th>
-                                            <th>Phone Number</th>
+                                            <th>Email</th>
                                             <th>Added On</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @if($studentlist != null)
-                                            @for($x=0; $x<sizeof($studentlist); $x++)
+                                        @if($users != null)
+                                            @for($x=0; $x<sizeof($users); $x++)
                                                 <tr>
                                                     <td>{{$x+1}}</td>
-                                                    <td>{{json_decode($studentlist)[$x]->phone_number}}</td>
-                                                    <td>{{json_decode($studentlist)[$x]->created_on}}</td>
+                                                    <td>{{json_decode($users)[$x]->user_email}}</td>
+                                                    <td>{{json_decode($users)[$x]->user_added_on}}</td>
                                                 </tr>
                                             @endfor
                                         @endif

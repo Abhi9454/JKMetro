@@ -40,7 +40,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('HOME.USERDASHBOARD')}}" class="nav-link">
+                        <a href="{{route('HOME.ADDARTICLE')}}" class="nav-link">
                             <i class="nav-icon fas fa-edit"></i>
                             <p>
                                 Add Article
@@ -48,7 +48,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('HOME.USERDASHBOARD')}}" class="nav-link">
+                        <a href="{{route('HOME.SHOWARTICLES')}}" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
                             <p>
                                 View Article
@@ -56,10 +56,18 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('HOME.USERDASHBOARD')}}" class="nav-link">
+                        <a href="{{route('HOME.ALLUSERS')}}" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
                             <p>
                                 All Users
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('HOME.ALLCATEGORY')}}" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                All Category
                             </p>
                         </a>
                     </li>

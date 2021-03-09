@@ -16,3 +16,8 @@ Route::get('/','AuthController@showlogin')->name('LOGIN');
 Route::post('/','AuthController@login')->name('LOGIN.SUBMIT');
 Route::get('/home','NewsController@showHome')->name('HOME.USERDASHBOARD');
 Route::get('/logout','AuthController@logout')->name('LOGOUT');
+Route::get('/addarticle','NewsController@addArticle')->name('HOME.ADDARTICLE');
+Route::get('/editarticle','NewsController@editArticle')->name('HOME.EDITARTICLE');
+Route::get('/allusers','NewsController@showUsers')->name('HOME.ALLUSERS');
+Route::get('/allarticles','NewsController@showArticles')->name('HOME.SHOWARTICLES');
+Route::get('/category','NewsController@showCategory')->name('HOME.ALLCATEGORY');
