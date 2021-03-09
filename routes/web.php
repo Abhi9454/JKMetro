@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','AuthController@showlogin')->name('LOGIN');
 Route::post('/','AuthController@login')->name('LOGIN.SUBMIT');
 Route::get('/home','NewsController@showHome')->name('HOME.USERDASHBOARD');
-Route::get('/','AuthController@logout')->name('LOGOUT');
+Route::get('/logout','AuthController@logout')->name('LOGOUT');
