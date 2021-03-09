@@ -19,7 +19,7 @@ Route::get('/logout','AuthController@logout')->name('LOGOUT');
 Route::get('/addarticle','NewsController@showAddArticle')->name('HOME.ADDARTICLE');
 Route::post('/addarticle','NewsController@addArticle')->name('HOME.SUBMITADDARTICLE');
 Route::get('/editarticle/{id}','NewsController@showEditArticle')->name('HOME.SHOWEDITARTICLE');
-Route::get('/editarticle/submit/{id}','NewsController@editArticle')->name('HOME.SUBMITEDITARTICLE');
+Route::post('/editarticlesubmit','NewsController@editArticle')->name('HOME.SUBMITEDITARTICLE');
 Route::get('/allusers','NewsController@showUsers')->name('HOME.ALLUSERS');
 Route::get('/allarticles','NewsController@showArticles')->name('HOME.SHOWARTICLES');
 Route::get('/category','NewsController@showCategory')->name('HOME.ALLCATEGORY');

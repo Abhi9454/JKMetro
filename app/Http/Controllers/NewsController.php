@@ -79,6 +79,26 @@ class NewsController extends Controller
         return redirect()->route("LOGIN");
     }
 
+    public function editArticle(Request $request)
+    {
+        if(Auth::guard('web')){
+            if (strcmp(session()->get('value', 'default'), "admin") == 0) {
+                $affectedRows = DB::table('Articles')->where('article_id', $request->article_id)->update([
+                    'article_text' => $request->articleString,
+                ]);
+                if($affectedRows>0){
+                    redirect()->route("HOME.SHOWARTICLES");
+                }
+                else {
+                    return redirect()->back()->withErrors([
+                        'error' => 'Something went wrong.Error updating details',
+                    ]);
+                }  
+            }
+        }
+        return redirect()->route("LOGIN");
+    }
+
     public function showUsers()
     {
         if(Auth::guard('web')){
