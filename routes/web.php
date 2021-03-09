@@ -21,3 +21,4 @@ Route::get('/editarticle','NewsController@editArticle')->name('HOME.EDITARTICLE'
 Route::get('/allusers','NewsController@showUsers')->name('HOME.ALLUSERS');
 Route::get('/allarticles','NewsController@showArticles')->name('HOME.SHOWARTICLES');
 Route::get('/category','NewsController@showCategory')->name('HOME.ALLCATEGORY');
+Route::post('/category','NewsController@addCategory')->name('HOME.ADDCATEGORY');
