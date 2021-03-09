@@ -49,8 +49,8 @@ class AuthController extends Controller
 
     public function logout()
     {
-        if (Auth::guard("user_web")) {
-            Auth::guard("user_web")->logout();
+        if (Auth::guard("web")) {
+            Auth::guard("web")->logout();
             session()->flush();
             session()->regenerate();
         }
