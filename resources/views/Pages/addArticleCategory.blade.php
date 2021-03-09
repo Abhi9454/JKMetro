@@ -74,7 +74,7 @@
                                             @for($x=0; $x<sizeof($categorylist); $x++)
                                                 <tr>
                                                     <td>{{$x+1}}</td>
-                                                    <td>{{json_decode($categorylist)[$x]->article_category_name}}</td>
+                                                    <td>{{json_decode($categorylist)[$x]->category_name}}</td>
                                                 </tr>
                                             @endfor
                                         @endif
