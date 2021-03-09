@@ -22,3 +22,4 @@ Route::get('/allusers','NewsController@showUsers')->name('HOME.ALLUSERS');
 Route::get('/allarticles','NewsController@showArticles')->name('HOME.SHOWARTICLES');
 Route::get('/category','NewsController@showCategory')->name('HOME.ALLCATEGORY');
 Route::post('/category','NewsController@addCategory')->name('HOME.ADDCATEGORY');
+Route::get('/deletearticle/{id}','NewsController@deleteArticle')->name('HOME.DELETEARTICLE');

@@ -60,6 +60,18 @@ class NewsController extends Controller
         return redirect()->route("LOGIN");
     }
 
+    public function deleteArticle(Request $request)
+    {
+        if(Auth::guard('web')){
+            if (strcmp(session()->get('value', 'default'), "admin") == 0) {
+                DB::table('articles')->where('article_id',$request->id)->remove();
+                $articles = DB::table('articles')->get();  
+                return view("Pages.allarticleList",['articlelist'=>$articles]);   
+            }
+        }
+        return redirect()->route("LOGIN");
+    }
+
     public function showCategory()
     {
         if(Auth::guard('web')){
