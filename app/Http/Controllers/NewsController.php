@@ -70,7 +70,7 @@ class NewsController extends Controller
         return redirect()->route("LOGIN");
     }
 
-    public function addCategory()
+    public function addCategory(Request $request)
     {
         if(Auth::guard('web')){
             if (strcmp(session()->get('value', 'default'), "admin") == 0) {
