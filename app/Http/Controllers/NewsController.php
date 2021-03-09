@@ -29,7 +29,7 @@ class NewsController extends Controller
         return redirect()->route("LOGIN");
     }
 
-    public function addArticle()
+    public function addArticle(Request $request)
     {
         if(Auth::guard('web')){
             if (strcmp(session()->get('value', 'default'), "admin") == 0) {
