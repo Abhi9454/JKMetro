@@ -53,9 +53,8 @@ class NewsController extends Controller
     {
         if(Auth::guard('web')){
             if (strcmp(session()->get('value', 'default'), "admin") == 0) {
-                $articles = DB::table('articles')->join("category","articles.article_category","=","category.category_id")
-                ->select('articles.*,category.category_name')->get();
-                return view("Pages.allarticleList",['articles'=>$articles]);    
+                $articles = DB::table('articles')->get();
+                return view("Pages.allarticleList",['articlelist'=>$articles]);    
             }
         }
         return redirect()->route("LOGIN");

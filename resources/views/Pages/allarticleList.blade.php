@@ -79,7 +79,7 @@
                                                 <tr>
                                                     <td>{{$x+1}}</td>
                                                     <td>{{json_decode($articlelist)[$x]->article_heading}}</td>
-                                                    <td>{{json_decode($articlelist)[$x]->article_time}}</td>
+                                                    <td>{{json_decode($articlelist)[$x]->article_added_on}}</td>
                                                     <td>{{json_decode($articlelist)[$x]->article_views}}</td>
                                                     <td> 
                                                     <a href="https://www.jkmetronews.xyz/deletearticle/{{json_decode($articlelist)[$x]->article_id}}">
