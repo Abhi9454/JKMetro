@@ -67,7 +67,7 @@
                             <div class="icon">
                                 <i class="fas fa-user"></i>
                             </div>
-                            <a href="" class="small-box-footer">
+                            <a href="{{route('HOME.ADDARTICLE')}}" class="small-box-footer">
                                 Add Now <i class="fas fa-arrow-circle-right"></i>
                             </a>
                         </div>
