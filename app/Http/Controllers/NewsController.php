@@ -9,7 +9,7 @@ class NewsController extends Controller
 {
     public function showHome()
     {
-        return redirect()->route("HOME.USERDASHBOARD");
+        return view("Pages.homePage");
     //     if (strcmp(session()->get('value', 'default'), "admin") == 0) {
                 
     //     }
