@@ -76,7 +76,7 @@
                         @endif
                         <!-- /.card-header -->
                             <!-- form start -->
-                            <form role="form"  method="POST" action="{{route('ARTICLEUPDATE.SUBMIT')}}">
+                            <form role="form"  method="POST" action="{{route('HOME.SUBMITEDITARTICLE')}}">
                                 {{ csrf_field() }}
                                 <div class="card-body">
                                     <div class="row">
