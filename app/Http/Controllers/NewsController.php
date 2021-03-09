@@ -14,6 +14,6 @@ class NewsController extends Controller
                 return redirect()->route("HOME.USERDASHBOARD");
             }
         }
-        return view('Auth.login');
+        return redirect()->route("LOGIN");
     }
 }
