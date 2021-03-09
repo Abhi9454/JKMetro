@@ -94,7 +94,7 @@ class NewsController extends Controller
     {
         if(Auth::guard('web')){
             if (strcmp(session()->get('value', 'default'), "admin") == 0) {
-                $articles = DB::table('articles')->get();
+                $articles = DB::table('articles')->orderBy('article_added_on','desc')->get();
                 return view("Pages.allarticleList",['articlelist'=>$articles]);    
             }
         }
