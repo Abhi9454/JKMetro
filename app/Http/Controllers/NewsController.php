@@ -87,7 +87,7 @@ class NewsController extends Controller
                     'article_text' => $request->articleString,
                 ]);
                 if($affectedRows>0){
-                    redirect()->route("HOME.SHOWARTICLES");
+                    return redirect()->route("HOME.SHOWARTICLES");
                 }
                 else {
                     return redirect()->back()->withErrors([
