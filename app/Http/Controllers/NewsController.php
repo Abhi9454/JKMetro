@@ -9,10 +9,8 @@ class NewsController extends Controller
 {
     public function showHome()
     {
-        if (Auth::guard("web")) {
-            if (strcmp(session()->get('value', 'default'), "admin") == 0) {
+        if (strcmp(session()->get('value', 'default'), "admin") == 0) {
                 return redirect()->route("HOME.USERDASHBOARD");
-            }
         }
         return redirect()->route("LOGIN");
     }
