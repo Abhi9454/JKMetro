@@ -82,11 +82,11 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                                 <div class="form-group">
-                                                <input type="hidden" name="article_id" value="{{$articlestring[0]->article_id}}"/>
+                                                <input type="hidden" name="article_id" value="{{$article[0]->article_id}}"/>
                                                     <label for="fathernamebox">Edit Article<sup><i
                                                                 class="fa fa-asterisk text-danger"
                                                                 style="font-size: 0.5rem"></i></sup></label>
-                                                                <textarea name="articleString">{{$articlestring[0]->article_string}}</textarea>
+                                                                <textarea name="articleString">{{$article[0]->article_text}}</textarea>
                                                 </div>
                                         </div>
                                     </div>

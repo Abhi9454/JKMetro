@@ -68,11 +68,12 @@ class NewsController extends Controller
         return redirect()->route("LOGIN");
     }
 
-    public function editArticle()
+    public function showEditArticle(Request $request)
     {
         if(Auth::guard('web')){
             if (strcmp(session()->get('value', 'default'), "admin") == 0) {
-                return view("Pages.editArticle");    
+                $article = DB::table('articles')->where('article_id',$request->id)->get();
+                return view("Pages.editArticle",['article'=>$article,'Success'=>""]);    
             }
         }
         return redirect()->route("LOGIN");
