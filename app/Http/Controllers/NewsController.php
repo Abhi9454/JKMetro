@@ -66,7 +66,7 @@ class NewsController extends Controller
             if (strcmp(session()->get('value', 'default'), "admin") == 0) {
                 DB::table('articles')->where('article_id',$request->id)->delete();
                 $articles = DB::table('articles')->get();  
-                return view("Pages.allarticleList",['articlelist'=>$articles]);   
+                return redirect()->route("HOME.SHOWARTICLES");   
             }
         }
         return redirect()->route("LOGIN");
