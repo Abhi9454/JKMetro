@@ -22,7 +22,8 @@ class NewsController extends Controller
     {
         if(Auth::guard('web')){
             if (strcmp(session()->get('value', 'default'), "admin") == 0) {
-                return view("Pages.addArticle",['Success'=>""]);    
+                $category = DB::table('category')->get();
+                return view("Pages.addArticle",["categorylist"=>$category,'Success'=>""]);    
             }
         }
         return redirect()->route("LOGIN");
