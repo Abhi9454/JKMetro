@@ -31,7 +31,7 @@
                     </ul>
                 </div>
             @endif
-            <form method="post">
+            <form method="post" action="{{route('LOGIN.SUBMIT')}}">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="exampleInputEmail1">Enter username</label>

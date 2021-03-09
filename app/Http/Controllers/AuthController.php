@@ -32,15 +32,12 @@ class AuthController extends Controller
                 'Password.required' => "Blank Password!!!",
             ]
         );
-            $username = filter_var($request->Email, FILTER_SANITIZE_STRING);
-            if (Auth::guard("web")->attempt(['user_name' => $username, 'password' => $request->Password])) {
+            $email = filter_var($request->Email, FILTER_SANITIZE_EMAIL);
+            if (Auth::guard("web")->attempt(['user_email' => $email, 'password' => $request->Password])) {
+                $user_status = DB::table('users')->where('user_email', $request->Email)->get();
                 $request->session()->put("value", "admin");
                 $request->session()->put("user_id", $user_status[0]->user_id);
-                $request->session()->put("name", $user_status[0]->full_name);
                 $request->session()->put("email", $user_status[0]->email);
-                $request->session()->put("username", $user_status[0]->user_name);
-                $request->session()->put("phone_number", $user_status[0]->phone_number);
-                $request->session()->put("profile_image", $user_status[0]->profile_image);
                 return redirect()->route("HOME.SUPERUSER");
             } else {
                 return redirect()->back()->withErrors([
