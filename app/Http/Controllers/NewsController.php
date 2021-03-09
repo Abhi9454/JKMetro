@@ -18,12 +18,51 @@ class NewsController extends Controller
         return redirect()->route("LOGIN");
     }
 
-    public function addArticle()
+    public function showAddArticle()
     {
         if(Auth::guard('web')){
             if (strcmp(session()->get('value', 'default'), "admin") == 0) {
                 $category = DB::table('category')->get();
                 return view("Pages.addArticle",["categorylist"=>$category,'Success'=>""]);    
+            }
+        }
+        return redirect()->route("LOGIN");
+    }
+
+    public function addArticle()
+    {
+        if(Auth::guard('web')){
+            if (strcmp(session()->get('value', 'default'), "admin") == 0) {
+                $this->validate($request, [
+                    'article_category_id' => 'required | min:1',
+                    'articleString' => 'required',
+                    'article_image' => 'required|max:10000',
+                    'article_heading' => 'required | min: 3',
+                ]);
+
+                $image = $request->file('article_image');
+                $name = time();
+                $filePath = '/uploads/articleIMG/' . $name . '.' . $image->getClientOriginalExtension();
+                $request->article_image->move(public_path('uploads/'), $filePath);
+
+                $input = $request->all();
+                $input['article_image'] = 'https://www.jkmetronews.xyz' . $filePath;
+                try {
+                    $data = array('category_id' => $request->article_category_id, 'article_text' => $request->articleString, 'article_heading' => $request->article_heading,
+                        'article_image' => $input['article_image'],'article_views' => 3,'article_user_id'=>session()->get('user_id', 'default'));
+                    $insertData = DB::table('articles')->insert($data);
+                    if ($insertData) {
+                        $category = DB::table('category')->get();
+                        return view("Pages.addArticle",["categorylist"=>$category,'Success'=>"Data Added Successfully"]); 
+                    }
+                } catch (Exception $e) {
+                    $errorCode = $e->errorInfo[1];
+                    if ($errorCode == '1062') {
+                        return redirect()->back()->withErrors([
+                            'error' => 'Duplicate Entry.',
+                        ]);
+                    }
+                }    
             }
         }
         return redirect()->route("LOGIN");

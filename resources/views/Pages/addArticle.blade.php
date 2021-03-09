@@ -76,7 +76,7 @@
                         @endif
                         <!-- /.card-header -->
                             <!-- form start -->
-                            <form role="form"  method="POST"  enctype="multipart/form-data">
+                            <form role="form"  method="POST"  action="{{route('HOME.SUBMITADDARTICLE')}}" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="card-body">
                                     <div class="row">
