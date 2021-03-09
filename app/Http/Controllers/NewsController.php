@@ -22,7 +22,7 @@ class NewsController extends Controller
     {
         if(Auth::guard('web')){
             if (strcmp(session()->get('value', 'default'), "admin") == 0) {
-                return view("Pages.addArticle");    
+                return view("Pages.addArticle",['Success'=>""]);    
             }
         }
         return redirect()->route("LOGIN");
