@@ -103,7 +103,7 @@
                                                 <label for="Idnamebox">Enter Category Name<sup><i
                                                             class="fa fa-asterisk text-danger"
                                                             style="font-size: 0.5rem"></i></sup></label>
-                                                <input type="text" class="form-control" name="article_category_name"
+                                                <input type="text" class="form-control" name="category_name"
                                                        id="Idbox" placeholder="Enter Category Name" required>
                                             </div>
                                         </div>
