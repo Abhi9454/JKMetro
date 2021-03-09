@@ -37,7 +37,7 @@ class AuthController extends Controller
                 $user_status = DB::table('users')->where('user_email', $request->Email)->get();
                 $request->session()->put("value", "admin");
                 $request->session()->put("user_id", $user_status[0]->user_id);
-                $request->session()->put("email", $user_status[0]->email);
+                $request->session()->put("user_email", $user_status[0]->email);
                 return redirect()->route("HOME.USERDASHBOARD");
             } else {
                 return redirect()->back()->withErrors([
