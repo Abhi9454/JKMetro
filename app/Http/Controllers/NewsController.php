@@ -83,7 +83,7 @@ class NewsController extends Controller
     {
         if(Auth::guard('web')){
             if (strcmp(session()->get('value', 'default'), "admin") == 0) {
-                $affectedRows = DB::table('Articles')->where('article_id', $request->article_id)->update([
+                $affectedRows = DB::table('articles')->where('article_id', $request->article_id)->update([
                     'article_text' => $request->articleString,
                 ]);
                 if($affectedRows>0){
