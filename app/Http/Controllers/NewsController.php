@@ -9,10 +9,11 @@ class NewsController extends Controller
 {
     public function showHome()
     {
-        return view("Pages.homePage");
-    //     if (strcmp(session()->get('value', 'default'), "admin") == 0) {
-                
-    //     }
-    //     return redirect()->route("LOGIN");
+        if(Auth::guard('web')){
+            if (strcmp(session()->get('value', 'default'), "admin") == 0) {
+                return view("Pages.homePage");    
+            }
+        }
+        return redirect()->route("LOGIN");
     }
 }
