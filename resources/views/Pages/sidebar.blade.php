@@ -22,12 +22,8 @@
 
         @if(strcmp(Session::get("value"),"admin")==0)
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src="{{Session::get("profile_image")}}"
-                     class="img-circle elevation-2" alt="User Image">
-            </div>
             <div class="info">
-                <a href="#" class="d-block">{{Session::get("name")}}</a>
+                <a href="#" class="d-block">{{Session::get("email")}}</a>
             </div>
         </div>
             <nav class="mt-2">
