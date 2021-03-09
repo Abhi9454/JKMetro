@@ -85,7 +85,7 @@
                                                     <label for="fathernamebox">Select Category<sup><i
                                                                 class="fa fa-asterisk text-danger"
                                                                 style="font-size: 0.5rem"></i></sup></label>
-                                                    <select class="form-control" name="category_id">
+                                                    <select class="form-control" name="article_category_id">
                                                     @if($categorylist != null)
                                                     @for($x=0; $x<sizeof($categorylist); $x++)
                                                             <option value="{{json_decode($categorylist)[$x]->category_id}}">{{json_decode($categorylist)[$x]->category_name}}</option>
