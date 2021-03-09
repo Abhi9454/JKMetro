@@ -13,7 +13,7 @@ class AuthController extends Controller
     {
         if (Auth::guard("web")) {
             if (strcmp(session()->get('value', 'default'), "admin") == 0) {
-                return redirect()->route("HOME.SUPERUSER");
+                return redirect()->route("HOME.USERDASHBOARD");
             }
         }
         return view('Auth.login');
@@ -38,7 +38,7 @@ class AuthController extends Controller
                 $request->session()->put("value", "admin");
                 $request->session()->put("user_id", $user_status[0]->user_id);
                 $request->session()->put("email", $user_status[0]->email);
-                return redirect()->route("HOME.SUPERUSER");
+                return redirect()->route("HOME.USERDASHBOARD");
             } else {
                 return redirect()->back()->withErrors([
                     'approve' => 'Wrong credentials',

@@ -13,7 +13,7 @@ class AuthController extends Controller
     {
         if (Auth::guard("web")) {
             if (strcmp(session()->get('value', 'default'), "admin") == 0) {
-                return redirect()->route("HOME.SUPERUSER");
+                return redirect()->route("HOME.USERDASHBOARD");
             }
         }
         return view('Auth.login');
