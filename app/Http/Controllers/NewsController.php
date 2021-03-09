@@ -64,7 +64,7 @@ class NewsController extends Controller
     {
         if(Auth::guard('web')){
             if (strcmp(session()->get('value', 'default'), "admin") == 0) {
-                DB::table('articles')->where('article_id',$request->id)->remove();
+                DB::table('articles')->where('article_id',$request->id)->delete();
                 $articles = DB::table('articles')->get();  
                 return view("Pages.allarticleList",['articlelist'=>$articles]);   
             }
