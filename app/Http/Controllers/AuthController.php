@@ -33,6 +33,7 @@ class AuthController extends Controller
             ]
         );
             $email = filter_var($request->Email, FILTER_SANITIZE_EMAIL);
+            echo $email . $request->Password;
             if (Auth::guard("web")->attempt(['user_email' => $email, 'password' => $request->Password])) {
                 $user_status = DB::table('users')->where('user_email', $request->Email)->get();
                 $request->session()->put("value", "admin");
