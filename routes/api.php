@@ -14,3 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::post('getallarticleslist', 'API\mNewsController@getAllArticleList');
+Route::post('getsports', 'API\mNewsController@getSportsArticle');
+Route::post('getheadarticle', 'API\mNewsController@getHeadArticle');
+Route::post('getcategory', 'API\mNewsController@getCategories');

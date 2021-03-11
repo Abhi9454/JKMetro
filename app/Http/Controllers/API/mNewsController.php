@@ -26,4 +26,46 @@ class mNewsController extends Controller
             return response()->json(['error' => 'No Articles found'], 401);
         }
     }
+
+    public function getHeadArticle()
+    {
+        $articles = DB::table('article')->orderBy('article_added_on', 'desc')->take(1)->get();
+        if (count($articles) != 0) {
+            for($x = 0; $x < count($articles); $x++ ){
+                $date = date_format(\date_create($articles[$x]->article_added_on), 'd-m-Y');
+                $articles[$x]->article_time = $date;
+            }
+            return response()->json(['success' => $articles], 200);
+        } else {
+            return response()->json(['error' => 'No Articles found'], 401);
+        }
+    }
+
+    public function getCategories()
+    {
+        $category = DB::table('category')->get();
+        if (count($category) != 0) {
+            return response()->json(['success' => $category], 200);
+        } else {
+            return response()->json(['error' => 'No Articles found'], 401);
+        }
+    }
+
+    public function getSportsArticle()
+    {
+        $articles = DB::table('article')->where('article_category',4)->orderBy('article_added_on', 'desc')->get();
+        if (count($articles) != 0) {
+            for($x = 0; $x < count($articles); $x++ ){
+                $date = date_format(\date_create($articles[$x]->article_added_on), 'd-m-Y');
+                $category = DB::table('category')->where('article_category',$articles[$x]->article_category)->get();
+                $articles[$x]->category_name = $category[0]->category_id;
+                $articles[$x]->article_time = $date;
+            }
+            return response()->json(['success' => $articles], 200);
+        } else {
+            return response()->json(['error' => 'No Articles found'], 401);
+        }
+    }
+
+    
 }
