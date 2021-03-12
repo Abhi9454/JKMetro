@@ -43,6 +43,16 @@ class mNewsController extends Controller
         }
     }
 
+    public function getIdArticle(Request $request)
+    {
+        $articles = DB::table('articles')->where('article_id',$request->article_id)->get();
+        if (count($articles) != 0) {
+            return response()->json(['success' => $articles], 200);
+        } else {
+            return response()->json(['error' => 'No Articles found'], 401);
+        }
+    }
+
     public function getCategories()
     {
         $category = DB::table('category')->get();
