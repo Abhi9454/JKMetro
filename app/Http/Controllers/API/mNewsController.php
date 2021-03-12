@@ -17,7 +17,7 @@ class mNewsController extends Controller
         if (count($articles) != 0) {
             for($x = 0; $x < count($articles); $x++ ){
                 $date = date_format(\date_create($articles[$x]->article_added_on), 'd-m-Y');
-                $category = DB::table('category')->where('article_category',$articles[$x]->article_category)->get();
+                $category = DB::table('category')->where('category_id',$articles[$x]->article_category)->get();
                 $articles[$x]->category_name = $category[0]->category_id;
                 $articles[$x]->article_time = $date;
             }
@@ -33,7 +33,7 @@ class mNewsController extends Controller
         if (count($articles) != 0) {
             for($x = 0; $x < count($articles); $x++ ){
                 $date = date_format(\date_create($articles[$x]->article_added_on), 'd-m-Y');
-                $category = DB::table('category')->where('article_category',$articles[$x]->article_category)->get();
+                $category = DB::table('category')->where('category_id',$articles[$x]->article_category)->get();
                 $articles[$x]->category_name = $category[0]->category_id;
                 $articles[$x]->article_time = $date;
             }
