@@ -42,7 +42,7 @@ class NewsController extends Controller
 
                 $image = $request->file('article_image');
                 $name = time();
-                $filePath = 'uploads/' . $name . '.' . $image->getClientOriginalExtension();
+                $filePath = '/uploads/' . $name . '.' . $image->getClientOriginalExtension();
                 $request->article_image->move(public_path('uploads/'), $filePath);
 
                 $input = $request->all();
