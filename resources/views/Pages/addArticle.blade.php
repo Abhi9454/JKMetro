@@ -22,7 +22,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+    <script src="https://www.jkmetronews.xyz/ckeditor/ckeditor.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
