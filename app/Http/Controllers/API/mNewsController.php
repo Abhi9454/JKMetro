@@ -13,7 +13,7 @@ class mNewsController extends Controller
 {
     public function getAllArticleList()
     {
-        $temp = DB::table('articles')->orderBy('article_added_on', 'desc')->take(1)->get();
+        $temp = DB::table('articles')->whereNotIn('article_category',[4])->orderBy('article_added_on', 'desc')->take(1)->get();
         $data[] = $temp[0]->article_id;
         $articles = DB::table('articles')->whereNotIn('article_id',$data)->whereNotIn('article_category',[4])->orderBy('article_added_on', 'desc')->get();
         if (count($articles) != 0) {
