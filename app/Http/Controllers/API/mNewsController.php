@@ -13,7 +13,7 @@ class mNewsController extends Controller
 {
     public function getAllArticleList()
     {
-        $articles = DB::table('articles')->whereNotIn('article_id',[4])->orderBy('article_added_on', 'desc')->get();
+        $articles = DB::table('articles')->whereNotIn('article_category_id',[4])->orderBy('article_added_on', 'desc')->get();
         if (count($articles) != 0) {
             for($x = 0; $x < count($articles); $x++ ){
                 $date = date_format(\date_create($articles[$x]->article_added_on), 'd-m-Y');
