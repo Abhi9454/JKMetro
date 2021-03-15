@@ -18,3 +18,4 @@ Route::post('getidarticle', 'API\mNewsController@getIdArticle');
 Route::post('getsports', 'API\mNewsController@getSportsArticle');
 Route::post('getheadarticle', 'API\mNewsController@getHeadArticle');
 Route::post('getcategory', 'API\mNewsController@getCategories');
+Route::post('getcategoryarticle', 'API\mNewsController@getCategoryArticle');
