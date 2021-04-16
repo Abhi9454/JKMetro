@@ -96,8 +96,8 @@ class mNewsController extends Controller
         }
     }
 
-    public function getNational(){
-        $articles = DB::table('articles')->where('article_category',3)->orderBy('article_added_on', 'desc')->get();
+    public function getSrinagar(){
+        $articles = DB::table('articles')->where('article_category',2)->orderBy('article_added_on', 'desc')->get();
         if (count($articles) != 0) {
             for($x = 0; $x < count($articles); $x++ ){
                 $date = date_format(\date_create($articles[$x]->article_added_on), 'd-m-Y');
@@ -111,8 +111,8 @@ class mNewsController extends Controller
         }
     }
 
-    public function getInternational(){
-        $articles = DB::table('articles')->where('article_category',2)->orderBy('article_added_on', 'desc')->get();
+    public function getBaramulla(){
+        $articles = DB::table('articles')->where('article_category',3)->orderBy('article_added_on', 'desc')->get();
         if (count($articles) != 0) {
             for($x = 0; $x < count($articles); $x++ ){
                 $date = date_format(\date_create($articles[$x]->article_added_on), 'd-m-Y');
@@ -141,8 +141,8 @@ class mNewsController extends Controller
         }
     }
 
-    public function getEditorial(){
-        $articles = DB::table('articles')->where('article_category',7)->orderBy('article_added_on', 'desc')->get();
+    public function getUdhampur(){
+        $articles = DB::table('articles')->where('article_category',5)->orderBy('article_added_on', 'desc')->get();
         if (count($articles) != 0) {
             for($x = 0; $x < count($articles); $x++ ){
                 $date = date_format(\date_create($articles[$x]->article_added_on), 'd-m-Y');
@@ -156,7 +156,7 @@ class mNewsController extends Controller
         }
     }
 
-    public function getEntertainment(){
+    public function getPahalgham(){
         $articles = DB::table('articles')->where('article_category', 6)->orderBy('article_added_on', 'desc')->get();
         if (count($articles) != 0) {
             for($x = 0; $x < count($articles); $x++ ){
@@ -171,8 +171,8 @@ class mNewsController extends Controller
         }
     }
 
-    public function getSpecial(){
-        $articles = DB::table('articles')->where('article_category',5)->orderBy('article_added_on', 'desc')->get();
+    public function getCategoryArticle(Request $request){
+        $articles = DB::table('articles')->where('article_category',$request->category_id)->orderBy('article_added_on', 'desc')->get();
         if (count($articles) != 0) {
             for($x = 0; $x < count($articles); $x++ ){
                 $date = date_format(\date_create($articles[$x]->article_added_on), 'd-m-Y');
