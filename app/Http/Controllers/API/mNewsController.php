@@ -49,6 +49,10 @@ class mNewsController extends Controller
     {
         $articles = DB::table('articles')->where('article_id',$request->article_id)->get();
         if (count($articles) != 0) {
+            $date = date_format(\date_create($articles[0]->article_added_on), 'd-m-Y');
+            $category = DB::table('category')->where('category_id',$articles[0]->article_category)->get();
+            $articles[0]->category_name = $category[0]->category_name;
+            $articles[0]->article_time = $date;
             return response()->json(['success' => $articles], 200);
         } else {
             return response()->json(['error' => 'No Articles found'], 401);
