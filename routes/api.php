@@ -24,4 +24,4 @@ Route::post('getallarticlebaramulla', 'API\mNewsController@getBaramulla');
 Route::post('getallarticlesports', 'API\mNewsController@getSports');
 Route::post('getallarticleudhampur', 'API\mNewsController@getUdhampur');
 Route::post('getallarticlepahalgham', 'API\mNewsController@getPahalgham');
-Route::post('getcategory', 'API\mNewsController@getCategoryArticle');
+Route::post('getcategoryArticle', 'API\mNewsController@getCategoryArticle');
