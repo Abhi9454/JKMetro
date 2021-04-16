@@ -61,7 +61,7 @@ class mNewsController extends Controller
         if (count($category) != 0) {
             return response()->json(['success' => $category], 200);
         } else {
-            return response()->json(['error' => 'No Articles found'], 401);
+            return response()->json(['error' => 'No categories found'], 401);
         }
     }
 
